@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from main_app import  views
 from accounts import urls as ac_url
+
+app_name = 'main'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.HomePage.as_view()),
-    path('home/', views.HomePage.as_view()),
+    path('', views.HomePage.as_view(), name = 'index'),
+    path('home/', views.HomePage.as_view(), name= 'index'),
     path('accounts/', include(ac_url, namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
