@@ -4,6 +4,7 @@ from django.conf import settings
 # import misaka
 from groups.models import Group
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 # Create your models here.
 User = get_user_model()
 
@@ -18,10 +19,14 @@ class Post(models.Model):
         return self.message
     
     def save(self, *args, **kwargs):
-        # self.message_html = misaka.html(self.html)
-        super.save(*args, **kwargs)
+        try:
+            super().save(*args, **kwargs)
+        except:
+            return reverse('posts:create')
+        else:
+            return reverse('post:all')
     
-    def get_abs_url(self):
+    def get_absolute_url(self):
         return reverse('posts:single', kwargs={'username':self.user.username, 'pk':self.pk})
 
     class Meta:

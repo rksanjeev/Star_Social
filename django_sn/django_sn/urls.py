@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from main_app import  views
 from accounts import urls as ac_url
+from groups import urls as group_urls
+from posts import urls as post_urls
 
 app_name = 'main'
 
@@ -26,4 +28,7 @@ urlpatterns = [
     path('home/', views.HomePage.as_view(), name= 'index'),
     path('accounts/', include(ac_url, namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('group/', include(group_urls)),
+    path('posts/', include(post_urls)),
+    
 ]
