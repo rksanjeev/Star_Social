@@ -30,5 +30,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('group/', include(group_urls)),
     path('posts/', include(post_urls)),
-    
+
 ]
+
