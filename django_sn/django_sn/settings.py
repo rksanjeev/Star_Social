@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'main_app',
     'accounts',
-    'bootstrap3',
+    'bootstrap4',
     'groups',
     'posts',
 ]
