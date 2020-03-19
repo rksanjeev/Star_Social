@@ -131,7 +131,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
 
-CRISPY_TEMPLATE_PACK = 'bootstrp4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 LOGIN_REDIRECT_URL = 'index'
